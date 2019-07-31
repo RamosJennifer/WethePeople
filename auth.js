@@ -21,7 +21,7 @@ $('#signup-form').on('submit', function (e) {
         // $('#navig').show();
         // $("#signup-form").css('display', 'none');
         // $('#info').hide();
-        
+            
         
     });
 });
