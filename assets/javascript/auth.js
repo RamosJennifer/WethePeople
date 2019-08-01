@@ -14,17 +14,15 @@ $('#signup-form').on('submit', function (e) {
     const password = signupForm['create-password'].value;
 
     // sign up a user
-    auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        signupForm['create-email'].value = null;
-        signupForm['create-password'].value = null;
-        // $('#news').show();
-        // $('#navig').show();
-        // $("#signup-form").css('display', 'none');
-        // $('#info').hide();
-            
-        
+   
+    auth.createUserWithEmailAndPassword(email, password).then(function() {
+        window.location.href = "./dashboard.html"
+    }).catch(function(error) {
+        $('#error-message').text(error.message);       
     });
 });
+
+
 
 // login method
 $('#login').on('click', function () {
@@ -41,12 +39,10 @@ $('#login-form').on('submit', function (e) {
     const email = loginForm['login-email'].value;
     const password = loginForm['login-password'].value;
 
-    auth.signInWithEmailAndPassword(email, password).then(cred => {
-      
-        loginForm['login-email'].value = null;
-        loginForm['login-password'].value = null;
-     
+    auth.signInWithEmailAndPassword(email, password).then(function() {
         window.location.href = "./dashboard.html"
+    }).catch(function(error) {
+        $('#error-message').text(error.message);       
     });
 });
 
