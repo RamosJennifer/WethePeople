@@ -15,21 +15,26 @@
 </head>
 
 <body>
+    <!-- Header -->
+    <header>We the People</header>
+
+    <!-- Navigation sidebar accesible here -->
+    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">sidenav</i></a>
+    <!-- Welcoming slides are accesible here -->
+    <a href="#slides" class="btn modal-trigger">Welcome</a>
+
     <!-- div container -->
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col l12">
 
                 <div class="main">
-                    <h1>We the People</h1>
                     <p>jfierhfo8ehfjsdnc juhyfiuherlfjcned iuewhfiudsnhkj adhp98wyf8qef </p>
                 </div>
 
             </div>
         </div>
     </div>
-
-    <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">sidenav</i></a>
 
     <ul id="slide-out" class="sidenav">
         <li>
@@ -46,10 +51,111 @@
         <li><a href="#!">My Community</a></li>
         <li><div class="divider"></div></li>
         <li><a class="subheader">The People's Resources</a></li>
-        <li><a href="#!">Home</a></li>
-        <li><a class="waves-effect" href="#!">Issues</a></li>
-        <li><a href="#!">Contact</a></li>
+        <li><a class="waves-effect" href="index.html">Home</a></li>
+        <li><a class="waves-effect" href="issues.html">Issues</a></li>
+        <li><a class="waves-effect" href="contact.html">Contact</a></li>
     </ul>
+    <div class="modal" id="slides">
+        <div class="modal-content">
+            <!-- div container -->
+            <div class="container">
+                <div class="row">
+                    <!-- Column for Previous Button -->
+                    <div class="col l2">
+                        <!-- Previous Button -->
+                        <submit id="previousButton">
+                            <b>&lt</b>
+                        </submit>
+                    </div>
+                    <!-- Column for Slides -->
+                    <div class="col l8">
+                        <!-- Slides -->
+                        <!-- ----------------------------------------------- -->
+                        <!-- Slides Page1 -->
+                        <div id="slidesPage1">
+                            <div class="row">
+                                <div class="col l12">
+                                    <h2>Welcome!</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l12">
+                                    <p>Click Arrows to Continue</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slides Page 2 -->
+                        <div id="slidesPage2">
+                            <div class="row">
+                                <div class="col l12">
+                                    <h2>First They Came</h2>
+                                    <p>
+                                    "First they came for the socialists, and I did not speak out—<br>
+                                        Because I was not a socialist.
+                                    </p>
+                                    <p>  
+                                    "Then they came for the trade unionists, and I did not speak out—<br>
+                                        Because I was not a trade unionist.
+                                    </p>
+                                    <p>   
+                                    "Then they came for the Jews, and I did not speak out—<br>
+                                        Because I was not a Jew.
+                                    </p>
+                                    <p>   
+                                    "Then they came for me—<br>
+                                        and there was no one left to speak for me."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slides Page 3 -->
+                        <div id="slidesPage3">
+                            <div class="row">
+                                <div class="col l12">
+                                    <h2>What We Believe</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l12">
+                                    <p>We the People Believe That Democracy is a <b>VERB</b>.</p>
+                                </div>
+                            </div>     
+                        </div>
+                        <!-- Slides Page 4 -->
+                        <div id="slidesPage4">
+                            <div class="row">
+                                <div class="col l12">
+                                    <h2>Take Action</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l12">
+                                    <p>In Order to Create a More Perfect Union...</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l12">
+                                    <button class="signInButton">Sign In</button>
+                                    <button class="quizButton">Take Quiz to Create Account</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ---------------------------------------------- -->
+                    </div>
+                    <!-- Column for Next Button -->
+                    <div class="col l2">
+                        <!-- Next Button -->
+                        <submit id="nextButton">
+                            <b>&gt</b>
+                        </submit>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-close btn">Close</a>
+        </div>
+    </div>
 
     <!-- Script to Our JavaScript Page -->
     <script types = text/javascript src = "assets/javascript/main.js"></script>
