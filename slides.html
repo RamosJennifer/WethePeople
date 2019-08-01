@@ -5,114 +5,124 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Welcome</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='assets/css/main.css'>
+    <!-- Compiled and minified CSS Materialize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     
 </head>
 <body>
     <!-- Header -->
     <header>We the People</header>
-    <!-- div container -->
-    <div class="container">
-        <div class="row">
-            <!-- Column for Previous Button -->
-            <div class="col-lg-3">
-                <!-- Previous Button -->
-                <submit id="previousButton">
-                    <b>&lt</b>
-                </submit>
-            </div>
-            <!-- Column for Slides -->
-            <div class="col-lg-6">
-                <!-- Slides -->
-                <!-- ----------------------------------------------- -->
-                <!-- Slides Page1 -->
-                <div id="slidesPage1">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Welcome!</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>
-                    <!-- <a href="#slidesPage4" class="previous round">&#8249;</a> -->
-                    <!-- <button id="previousButton">Previous</button> -->
-                    Click Arrows to Continue
-                    <!-- <button id="nextButton">Next</button> -->
-                    <!-- <a href="#slidesPage2" class="next round">&#8250;</a> -->
-                    </p>
-                </div>
-            </div>
-                </div>
-                <!-- Slides Page 2 -->
-                <div id="slidesPage2">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2>First They Came</h2>
-                            <p>
-                            "First they came for the socialists, and I did not speak out—<br>
-                                Because I was not a socialist.
-                            </p>
-                            <p>  
-                            "Then they came for the trade unionists, and I did not speak out—<br>
-                                Because I was not a trade unionist.
-                            </p>
-                            <p>   
-                            "Then they came for the Jews, and I did not speak out—<br>
-                                Because I was not a Jew.
-                            </p>
-                            <p>   
-                           "Then they came for me—<br>
-                                and there was no one left to speak for me."
-                            </p>
+
+    <!-- Welcoming slides are accesible here -->
+    <a href="#slides" class="btn modal-trigger">Welcome</a>
+
+    <div class="modal" id="slides">
+        <div class="modal-content">
+            <!-- div container -->
+            <div class="container">
+                <div class="row">
+                    <!-- Column for Previous Button -->
+                    <div class="col l2">
+                        <!-- Previous Button -->
+                        <submit id="previousButton">
+                            <b>&lt</b>
+                        </submit>
+                    </div>
+                    <!-- Column for Slides -->
+                    <div class="col l8">
+                        <!-- Slides -->
+                        <!-- ----------------------------------------------- -->
+                        <!-- Slides Page1 -->
+                        <div id="slidesPage1">
+                            <div class="row">
+                                <div class="col l12">
+                                    <h2>Welcome!</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l12">
+                                    <p>Click Arrows to Continue</p>
+                                </div>
+                            </div>
                         </div>
+                        <!-- Slides Page 2 -->
+                        <div id="slidesPage2">
+                            <div class="row">
+                                <div class="col l12">
+                                    <h2>First They Came</h2>
+                                    <p>
+                                    "First they came for the socialists, and I did not speak out—<br>
+                                        Because I was not a socialist.
+                                    </p>
+                                    <p>  
+                                    "Then they came for the trade unionists, and I did not speak out—<br>
+                                        Because I was not a trade unionist.
+                                    </p>
+                                    <p>   
+                                    "Then they came for the Jews, and I did not speak out—<br>
+                                        Because I was not a Jew.
+                                    </p>
+                                    <p>   
+                                    "Then they came for me—<br>
+                                        and there was no one left to speak for me."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slides Page 3 -->
+                        <div id="slidesPage3">
+                            <div class="row">
+                                <div class="col l12">
+                                    <h2>What We Believe</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l12">
+                                    <p>We the People Believe That Democracy is a <b>VERB</b>.</p>
+                                </div>
+                            </div>     
+                        </div>
+                        <!-- Slides Page 4 -->
+                        <div id="slidesPage4">
+                            <div class="row">
+                                <div class="col l12">
+                                    <h2>Take Action</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l12">
+                                    <p>In Order to Create a More Perfect Union...</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col l12">
+                                    <button class="signInButton">Sign In</button>
+                                    <button class="quizButton">Take Quiz to Create Account</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ---------------------------------------------- -->
+                    </div>
+                    <!-- Column for Next Button -->
+                    <div class="col l2">
+                        <!-- Next Button -->
+                        <submit id="nextButton">
+                            <b>&gt</b>
+                        </submit>
                     </div>
                 </div>
-                <!-- Slides Page 3 -->
-                <div id="slidesPage3">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2>What We Believe</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>We the People Believe That Democracy is a <b>VERB</b>.</p>
-                    </div>
-                </div>     
-                </div>
-                <!-- Slides Page 4 -->
-                <div id="slidesPage4">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2>Take Action</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p>In Order to Create a More Perfect Union...</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <button class="signInButton">Sign In</button>
-                        <button class="quizButton">Take Quiz to Create Account</button>
-                    </div>
-                </div>
-                </div>
-                <!-- ---------------------------------------------- -->
-            </div>
-            <!-- Column for Next Button -->
-            <div class="col-lg-3">
-                <!-- Next Button -->
-                <submit id="nextButton">
-                    <b>&gt</b>
-                </submit>
             </div>
         </div>
+        <div class="modal-footer">
+            <a href="#" class="modal-close btn">Close</a>
+        </div>
     </div>
-    <script types =text/javascript src='main.js'></script>
+
+    <!-- Script to Our JavaScript Page -->
+    <script types = text/javascript src = "assets/javascript/main.js"></script>
+    <!-- Compiled and minified JavaScript Materialize-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
