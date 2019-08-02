@@ -20,6 +20,7 @@ function openingSlides() {
 }
 
 var slides = 0;
+console.log("pages")
 
 // This Function Will Alow the Slides to Move Backwards 1 Slide
 $("#previousButton").click(function(decreaseSlides){
