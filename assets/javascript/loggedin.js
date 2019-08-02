@@ -150,31 +150,31 @@ $("#update-my-profile").on("click", function(){
 
 
     
+    db.ref().on("child_added", function (childSnapshot) {
+        console.log(childSnapshot.val());
+    
+        // Store everything into a variable.
+        var userName = childSnapshot.val().name;
+        var userSkills = childSnapshot.val().skills;
+        var userHours = childSnapshot.val().address;
+        var userAddress= childSnapshot.val().contact;
+        var newRow = $("<tr>").append(
+            $("<td>").text(userName),
+            $("<td>").text(userSkills),
+            $("<td>").text(userHours),
+            $("<td>").text(userAddress),
+            
+        );
+    
+        $("#updated-page").append(newRow);
     
 })
-db.ref().on("child_added", function (childSnapshot) {
-    console.log(childSnapshot.val());
-
-    // Store everything into a variable.
-    var userName = childSnapshot.val().name;
-    var userSkills = childSnapshot.val().skills;
-    var userHours = childSnapshot.val().address;
-    var userAddress= childSnapshot.val().contact;
-    var newRow = $("<tr>").append(
-        $("<td>").text(userName),
-        $("<td>").text(userSkills),
-        $("<td>").text(userHours),
-        $("<td>").text(userAddress),
-        
-    );
-
-    $("#updated-page > tbody").append(newRow);
 
     
 });
 $("#save-changes").on('click', function(){
     event.preventDefault();
-    $("#updated-page").css('display', 'inline');
+    // $("#updated-page").css('display', 'inline');
     $("#input").css('display', 'none');
     $("#update-my-profile").css('display', 'inline');
     $("#save-changes").css('display', 'none');

@@ -26,3 +26,13 @@ body {
 #navig {
     display: none;
 }
+#info {
+   
+}
+#canvas {
+    padding: 100px;
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto;   
+
+}

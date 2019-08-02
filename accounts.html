@@ -7,166 +7,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My account</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/CSS/style.css" />
 
 </head>
 
 <body>
-    <!-- NAVBAR -->
-    <nav class="z-depth-0 grey lighten-4" id="navig">
-        <div class="nav-wrapper container">
-            <a href="#" class="brand-logo">
-                <img src="./assets/images/Free_Sample_By_Wix.jpg" style="width: 70px; ">
-            </a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li class="logged-in">
-                    <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
-                </li>
-                <li class="logged-in">
-                    <a href="#" class="grey-text" id="logout">Logout</a>
-                </li>
-                <li class="logged-in">
-                    <a href="#" class="grey-text modal-trigger" data-target="modal-create">Create News</a>
-                </li>
 
-                </span>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- ACCOUNT MODAL -->
-    <div id="modal-account" class="modal">
-        <div class="modal-content center-align">
-            <h4>Account details</h4><br />
-            <div class="account-details"></div>
-        </div>
-    </div>
-    <!-- CREATE NEWS MODAL -->
-    <div id="modal-create" class="modal">
-        <div class="modal-content">
-            <h4>Create News</h4><br />
-            <form id="create-form">
-                <div class="input-field">
-                    <input type="text" id="title" required>
-                    <label for="title">Guide Title</label>
-                </div>
-                <div class="input-field">
-                    <textarea id="content" class="materialize-textarea" required></textarea>
-                    <label for="content">Guide Content</label>
-                </div>
-                <button class="btn yellow darken-2 z-depth-0">Create</button>
-            </form>
-        </div>
-    </div>
-    <!-- NEWS LIST -->
-    <div class="container" style="margin-top: 40px;" id="news">
-        <ul class="collapsible z-depth-0 guides" style="border: none;">
-            <li>
-                <div class="collapsible-header grey lighten-4">Donation</div>
-                <div class="collapsible-body white">
+    <div id="canvas">
+        
 
-                    <table>
-                        <tr>
-                            <th>Company</th>
-                            <th>Contact</th>
-                            <td><button>Mexico</button></td>
-                        </tr>
-                        <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>Maria Anders</td>
-                            <td><button>Mexico</button></td>
-                        </tr>
-                        <tr>
-                            <td>Centro comercial Moctezuma</td>
-                            <td>Francisco Chang</td>
-                            <td><button>Mexico</button></td>
-                        </tr>
+        <div class="card text-center" id="info">
+                
+            <div class="card-header">
+                Be more engaged!
+            </div>
+            <div class="card-body pt-5">
+                <h5 class="card-title">Our Chicago community</h5><br> <br>
+                <p class="card-text">With our community you always have a chance to help others and to get help in
+                    Chicago.<br>
+                    Join us and see what you can do!</p><br>
+                <button class="btn btn-primary" id="create">Create an account</button><br><br>
+                <button class="btn btn-warning" id="login">Log in</button><br> <br>
+                <a href="index.html"><button class="btn btn-warning">Home</button></a>
 
-                    </table>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header grey lighten-4">News</div>
-                <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header grey lighten-4">News</div>
-                <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-            <li>
-                <div class="collapsible-header grey lighten-4">News</div>
-                <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-            </li>
-        </ul>
-    </div>
 
-    <div class="card text-center" id="info">
-        <div class="card-header">
-            Be more engaged!
-        </div>
-        <div class="card-body pt-5">
-            <h5 class="card-title">Our Chicago community</h5><br> <br>
-            <p class="card-text">With our community you always have a chance to help others and to get help in Chicago.<br>
-                Join us and see what you can do!</p><br>
-            <button class="btn btn-primary" id="create">Create an account</button><br><br>
-            <button class="btn btn-warning" id="login">Log in</button>
+                <form id="signup-form">
+                    <div class="form-group  text-center">
+                        <div class="form-row">
+                            <div class="form-group col-md-3"> </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="create-email" placeholder="Email" required />
+                            </div>
 
-            <form id="signup-form">
-                <div class="form-group  text-center">
-                    <div class="form-row">
-                        <div class="form-group col-md-3"> </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="create-email" placeholder="Email" required />
+                            <div class="form-group col-md-3">
+                                <label for="inputPassword4">Password</label>
+                                <input type="password" class="form-control" id="create-password" placeholder="Password"
+                                    required />
+                            </div>
+                            <div class="form-group col-md-3"> </div>
                         </div>
-
-                        <div class="form-group col-md-3">
-                            <label for="inputPassword4">Password</label>
-                            <input type="password" class="form-control" id="create-password" placeholder="Password"
-                                required />
-                        </div>
-                        <div class="form-group col-md-3"> </div>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
                     </div>
-                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                        else.</small>
-                </div>
-                <p id="error-message"></p>
+                    <p id="error-message"></p>
 
-                <button type="submit" class="btn btn-primary">Submit</button> <br><br>
-            </form>
+                    <button type="submit" class="btn btn-primary">Submit</button> <br><br>
+                </form>
 
-            <form id="login-form">
-                <div class="form-group  text-center">
-                    <div class="form-row">
-                        <div class="form-group col-md-3"> </div>
-                        <div class="form-group col-md-3">
-                            <label for="inputEmail4">Email</label>
-                            <input type="email" class="form-control" id="login-email" placeholder="Email" required />
+                <form id="login-form">
+                    <div class="form-group  text-center">
+                        <div class="form-row">
+                            <div class="form-group col-md-3"> </div>
+                            <div class="form-group col-md-3">
+                                <label for="inputEmail4">Email</label>
+                                <input type="email" class="form-control" id="login-email" placeholder="Email" required />
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="inputPassword4">Password</label>
+                                <input type="password" class="form-control" id="login-password" placeholder="Password"
+                                    required />
+                            </div>
+                            <div class="form-group col-md-3"> </div>
                         </div>
-
-                        <div class="form-group col-md-3">
-                            <label for="inputPassword4">Password</label>
-                            <input type="password" class="form-control" id="login-password" placeholder="Password"
-                                required />
-                        </div>
-                        <div class="form-group col-md-3"> </div>
                     </div>
-                </div>
-                <p id="error-message"></p>
+                    <p id="error-message"></p>
 
-                <button type="submit" class="btn btn-primary">Submit</button> <br><br>
-                <!-- type="submit" class="btn btn-primary" -->
-            </form>
+                    <button type="submit" class="btn btn-primary">Submit</button> <br><br>
+                    <!-- type="submit" class="btn btn-primary" -->
+                </form>
+
+            </div>
+
 
         </div>
 
-
-    </div>
-
-    <div class="card-footer text-muted text-center">
-        WeThePeople
+        <div class="card-footer text-muted text-center">
+            WeThePeople
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -177,7 +99,7 @@
     <script src="./assets/javascript/initializeFB.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./assets/javascript/auth.js"></script>
-    
+
 </body>
 
 </html>
