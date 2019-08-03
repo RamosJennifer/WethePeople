@@ -13,6 +13,32 @@ auth.onAuthStateChanged(user => {
     }
 });
 
+var abouT;
+var addresS;
+var hourS;
+var interestS;
+
+
+// getting data from my collection
+var docRef = fs.collection("profile").doc("rHRul4gGhrVe24hhPlAd");
+
+docRef.get().then(function (doc) {
+    var abouT = doc.data().about;
+    var addresS = doc.data().address;
+    var hourS = doc.data().hours;
+    var interestS = doc.data().interests;
+    console.log(abouT, addresS, hourS, interestS)
+    // putting current data on the site from my collection
+    $('#account-name').text(abouT);
+    $('#account-skills').text(interestS);
+    $('#account-hours').text(hourS);
+    $('#account-address').text(addresS);
+
+
+
+});
+
+
 
 
 $("#add-donation-btn").on("click", function (event) {
@@ -24,7 +50,7 @@ $("#add-donation-btn").on("click", function (event) {
     var NewsAddressD = $("#address-input").val().trim();
     var NewsContactD = $("#contact-input").val().trim();
 
-   
+
 
     // Creates local "temporary" object for holding train data
     var newNewsD = {
@@ -37,29 +63,29 @@ $("#add-donation-btn").on("click", function (event) {
 
     // Uploads train data to the database
     db.ref().push(newNewsD);
-     // Clears all of the text-boxes
-     $("#info-input").val("");
-     $("#due-input").val("");
-     $("#address-input").val("");
-     $("#contact-input").val("");
-     db.ref().on("child_added", function (childSnapshot) {
-         console.log(childSnapshot.val());
-     
-         // Store everything into a variable.
-         var NewsInfoD = childSnapshot.val().infoD;
-         var NewsDueD = childSnapshot.val().dueD;
-         var NewsAddressD = childSnapshot.val().addressD;
-         var NewsContactD = childSnapshot.val().contactD;
-         var newRowD = $("<tr>").append(
-             $("<td>").text(NewsInfoD),
-             $("<td>").text(NewsDueD),
-             $("<td>").text(NewsAddressD),
-             $("<td>").text(NewsContactD),
-            
-         );
-     
-         $("#donation-table").append(newRowD);
-     });
+    // Clears all of the text-boxes
+    $("#info-input").val("");
+    $("#due-input").val("");
+    $("#address-input").val("");
+    $("#contact-input").val("");
+    db.ref().on("child_added", function (childSnapshot) {
+        console.log(childSnapshot.val());
+
+        // Store everything into a variable.
+        var NewsInfoD = childSnapshot.val().infoD;
+        var NewsDueD = childSnapshot.val().dueD;
+        var NewsAddressD = childSnapshot.val().addressD;
+        var NewsContactD = childSnapshot.val().contactD;
+        var newRowD = $("<tr>").append(
+            $("<td>").text(NewsInfoD),
+            $("<td>").text(NewsDueD),
+            $("<td>").text(NewsAddressD),
+            $("<td>").text(NewsContactD),
+
+        );
+
+        $("#donation-table").append(newRowD);
+    });
 });
 // Append the new row to the table   
 
@@ -96,7 +122,7 @@ $("#add-volunteering-btn").on("click", function (event) {
     db.ref().push(newNews);
     db.ref().on("child_added", function (childSnapshot) {
         console.log(childSnapshot.val());
-    
+
         // Store everything into a variable.
         var NewsInfo = childSnapshot.val().info;
         var NewsDue = childSnapshot.val().due;
@@ -107,9 +133,9 @@ $("#add-volunteering-btn").on("click", function (event) {
             $("<td>").text(NewsDue),
             $("<td>").text(NewsAddress),
             $("<td>").text(NewsContact),
-            $("<button>").text("see profile"),
+
         );
-    
+
         $("#volunteering-table").append(newRow);
     });
 });
@@ -119,7 +145,9 @@ $("#add-volunteering-btn").on("click", function (event) {
 
 
 
-$("#update-my-profile").on("click", function(){
+
+
+$("#update-my-profile").on("click", function () {
     event.preventDefault();
     // buttons
     $("#update-my-profile").css('display', 'none');
@@ -130,53 +158,69 @@ $("#update-my-profile").on("click", function(){
 
 
 
-  
-    // Grabs user input
-    if ($("#account-name-edit").val().length >1 ) {
-
-        var userName = $("#account-name-edit").val().trim();
-
-    }
-    if ($("#account-skills-edit").val().length >1 ) {
-        var userSkills= $("#account-skills-edit").val().trim();
-    }
-    if ($("#account-hours-edit").val().length >1 ) {
-        var userHours= $("#account-hours-edit").val().trim();
-    }
-    if ($("#account-address-edit").val().length >1 ) {
-        var userAddress= $("#account-address-edit").val().trim();
-    }
 
 
 
-    
-    db.ref().on("child_added", function (childSnapshot) {
-        console.log(childSnapshot.val());
-    
-        // Store everything into a variable.
-        var userName = childSnapshot.val().name;
-        var userSkills = childSnapshot.val().skills;
-        var userHours = childSnapshot.val().address;
-        var userAddress= childSnapshot.val().contact;
-        var newRow = $("<tr>").append(
-            $("<td>").text(userName),
-            $("<td>").text(userSkills),
-            $("<td>").text(userHours),
-            $("<td>").text(userAddress),
-            
-        );
-    
-        $("#updated-page").append(newRow);
-    
-})
 
-    
 });
-$("#save-changes").on('click', function(){
+$("#save-changes").on('click', function () {
     event.preventDefault();
-    // $("#updated-page").css('display', 'inline');
+
     $("#input").css('display', 'none');
+
     $("#update-my-profile").css('display', 'inline');
     $("#save-changes").css('display', 'none');
 
+
+    var userName = $("#account-name-edit").val().trim();
+    var userSkills = $("#account-skills-edit").val().trim();
+    var userHours = $("#account-hours-edit").val().trim();
+    var userAddress = $("#account-address-edit").val().trim();
+
+
+    fs.collection('profile').doc('rHRul4gGhrVe24hhPlAd').update({
+        about: userName,
+        hours: userHours,
+        address: userAddress,
+        interests: userSkills
+
+    });
+    abouT = userName;
+    interestS = userSkills;
+    hourS = userHours;
+    addresS = userAddress;
+    $('#account-name').text(abouT);
+    $('#account-skills').text(interestS);
+    $('#account-hours').text(hourS);
+    $('#account-address').text(addresS);
+
+    $("#example").css('display', 'table-row');
+
+
 })
+
+$('#get-another-quote-button').on('click', function (e) {
+    e.preventDefault();
+    $.ajax({
+        type: 'GET',
+        crossDomain: true,
+        dataType: 'json',
+        url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=',
+        success: function (data) {
+            console.log(data);
+            var post = data.shift(); // The data is an array of posts. Grab the first one.
+            $('#quote-title').text(post.title);
+            $('#quote-content').html(post.content);
+
+            // If the Source is available, use it. Otherwise hide it.
+            if (typeof post.custom_meta !== 'undefined' && typeof post.custom_meta.Source !== 'undefined') {
+                $('#quote-source').html('Source:' + post.custom_meta.Source);
+            } else {
+                $('#quote-source').text('');
+            }
+        },
+        cache: false
+    });
+});
+
+

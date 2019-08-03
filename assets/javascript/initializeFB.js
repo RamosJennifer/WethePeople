@@ -13,3 +13,6 @@ firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const db = firebase.database();
+const fs = firebase.firestore();
+  const settings = {/* your settings... */ timestampsInSnapshots: true};
+  fs.settings(settings);

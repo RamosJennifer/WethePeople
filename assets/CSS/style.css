@@ -26,13 +26,23 @@ body {
 #navig {
     display: none;
 }
-#info {
-   
-}
+
 #canvas {
-    padding: 100px;
+    padding: 20px;
     margin-left: 0;
     margin-right: 0;
     margin: auto;   
 
+}
+.slim-row {
+    
+    word-wrap: break-word;
+    
+}
+#updated-page {
+    table-layout: fixed;
+}
+#navig {
+    display: flex;
+    margin: auto;
 }
