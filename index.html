@@ -27,7 +27,7 @@
         <li><a href="lgbtRights.html">LGBT Rights</a></li>
 
         <li><a href="gunControl.html">Gun Control</a></li>
-        <li><a href="raceRealtions.html">Race</a></li>
+        <li><a href="raceRealtions.html">Race Relations</a></li>
 
 
     </ul>
@@ -237,41 +237,23 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        // Event listener for all button elements
-        // $("#button").on("click", function() {
-        //       // In this case, the "this" keyword refers to the button that was clicked
-        //       let searchItem = "donation"
-        //       // Performing our AJAX GET request
-        //       url = "https://newsapi.org/v2/top-headlines?q="+ searchItem + "&apiKey=73dbce07eb8943f3a1df1b850145f8f8";
-
-        // $.getJSON(url, function(data){
-        //   console.log(data);
-        //   $("body").append("<h6>" + data.articles[0].description + " - <i>" + + "</i></h6>");
-
-        // //   $("body").append("<code>" + JSON.stringify(data, null, '<br/>') + "</code>");
-        // });
-
-        // });
-        $('#button').on('click', function (e) {
-            e.preventDefault();
-
-            let searchItem = "donation";
-            url = "https://newsapi.org/v2/top-headlines?q=" + searchItem + "&apiKey=73dbce07eb8943f3a1df1b850145f8f8";
-            $.ajax({
-                type: 'GET',
-                crossDomain: true,
-                dataType: 'json',
-                url: url,
-                success: function (data) {
-                    console.log(data);
-
-                    $('#quote-title').text(data.articles[2].description);
-                    $('#quote-author').html(data.articles[2].title);
-                },
-
+            // Event listener for all button elements
+            $("#button").on("click", function() {
+                  // In this case, the "this" keyword refers to the button that was clicked
+                  let searchItem = "donation"
+                  // Performing our AJAX GET request
+                  url = "https://newsapi.org/v2/top-headlines?q="+ searchItem + "&apiKey=73dbce07eb8943f3a1df1b850145f8f8";
+    
+            $.getJSON(url, function(data){
+              console.log(data);
+              $("#news").append("<h6>" + data.articles[0].description + " - <i>" + + "</i></h6>");
+    
+            //   $("body").append("<code>" + JSON.stringify(data, null, '<br/>') + "</code>");
             });
-        });
-    </script>
+    
+            });
+           
+        </script>
 
 </body>
 
