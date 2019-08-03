@@ -1,5 +1,6 @@
 
     function displayNews() {
+    let    
     let url = 'https://newsapi.org/v2/top-headlines?q=' +
         'trump' +
         '&apiKey=73dbce07eb8943f3a1df1b850145f8f8';
@@ -7,6 +8,7 @@
         url: url,
         method: "GET"
     }).then(function (response) {
+        var dataObject = jQuery.parseJSON(response);
         var results = response;
         console.log(response);
         for (var i = 0; i < 3; i++) {
@@ -19,7 +21,9 @@
     <a>${results[i].url}</a>
 
     `;
+    $("#news").append("<a href='" + results[i].url + "'>" + results[i].url + "</a>");
         }
+
         $("#news").html(output);
     })
 }

@@ -22,10 +22,10 @@
         <li><a href="education.html">Education</a></li>
         <li><a href="healthcare.html">Health Care</a></li>
         <li><a href="immigration.html">Immigration</a></li>
-     
+
         <li><a href="climateChange.html">Climate Change</a></li>
         <li><a href="lgbtRights.html">LGBT Rights</a></li>
-       
+
         <li><a href="gunControl.html">Gun Control</a></li>
         <li><a href="raceRealtions.html">Race</a></li>
 
@@ -81,6 +81,18 @@
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col l12">
+                <!-- div conatining paragraph Why We Do -->
+                <div id="quote">
+                    <h2>Quote</h2>
+                    <div id="quote-title"></div>
+
+                    <a class="waves-effect waves-light btn" id="button">Donate</a>
+
                 </div>
             </div>
         </div>
@@ -222,9 +234,44 @@
 
         });
     </script>
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+    <script>
+        // Event listener for all button elements
+        // $("#button").on("click", function() {
+        //       // In this case, the "this" keyword refers to the button that was clicked
+        //       let searchItem = "donation"
+        //       // Performing our AJAX GET request
+        //       url = "https://newsapi.org/v2/top-headlines?q="+ searchItem + "&apiKey=73dbce07eb8943f3a1df1b850145f8f8";
+
+        // $.getJSON(url, function(data){
+        //   console.log(data);
+        //   $("body").append("<h6>" + data.articles[0].description + " - <i>" + + "</i></h6>");
+
+        // //   $("body").append("<code>" + JSON.stringify(data, null, '<br/>') + "</code>");
+        // });
+
+        // });
+        $('#button').on('click', function (e) {
+            e.preventDefault();
+
+            let searchItem = "donation";
+            url = "https://newsapi.org/v2/top-headlines?q=" + searchItem + "&apiKey=73dbce07eb8943f3a1df1b850145f8f8";
+            $.ajax({
+                type: 'GET',
+                crossDomain: true,
+                dataType: 'json',
+                url: url,
+                success: function (data) {
+                    console.log(data);
+
+                    $('#quote-title').text(data.articles[2].description);
+                    $('#quote-author').html(data.articles[2].title);
+                },
+
+            });
+        });
+    </script>
 
 </body>
 

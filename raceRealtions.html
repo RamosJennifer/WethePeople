@@ -45,62 +45,8 @@
 
     <!-- div container -->
     <div class="container">
-        <div class="row">
-            <div class="col l12">
-                <!-- div containing paragraph Who We Are -->
-                <div id="news">
-                    <h2>News</h2>
-                    <p>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col l12">
-                <!-- div containing paragraph What We Do -->
-                <div id="petition">
-                    <h2>Petitions</h2>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col l12">
-                <!-- div conatining paragraph Why We Do -->
-                <div class="volunteer">
-                    <h2>Volunteer</h2>
-                    <div class="section">
-                        <h5>100 Black Men of Chicago, Inc</h5>
-                        <p>
-                            100 Black Men of Chicago, Inc. will provide positive role models for African-American males
-                            throughout the Greater Chicago area by pairing them with successful African-American
-                            professionals committed to the intellectual development of youth and the economic
-                            empowerment of the African-American community based on the following principles: Respect for
-                            Family, Spirituality, Justice and Integrity.
-                        </p>
-                        <a href="https://100bmc.org/volunteer/" class="waves-effect waves-light btn">Volunteer</a>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="section">
-                        <h5>Aquinas Literacy Center</h5>
-                        <p>
-                            Aquinas Literacy Center started in 1996 in the basement of the convent at Our Lady of Good
-                            Counsel Church by the Adrian Dominican Sisters in response to the increased need for
-                            English-language literacy instruction in the McKinley Park community. Under the leadership
-                            of Sister Claudia Hinds, O.P. and Sister Rosemary Brennan, O.P., with the support of the
-                            Adrian Dominican Sisters, the Aquinas Literacy Center opened its doors and began simply,
-                            with two tables and five chairs.
-                        </p>
-                        <a href="http://aquinasliteracycenter.org/volunteers.html"
-                            class="waves-effect waves-light btn">Volunteer</a>
-                    </div>
-                </div>
-            </div>
+       
+        
             <div class="row">
                 <div class="col l12">
                     <!-- div conatining paragraph Why We Do --> 
@@ -155,6 +101,53 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                    <div class="col l12">
+                        <!-- div conatining paragraph Why We Do -->
+                        <div class="volunteer">
+                            <h2>Volunteer</h2>
+                            <div class="section">
+                                <h5>100 Black Men of Chicago, Inc</h5>
+                                <p>
+                                    100 Black Men of Chicago, Inc. will provide positive role models for African-American males
+                                    throughout the Greater Chicago area by pairing them with successful African-American
+                                    professionals committed to the intellectual development of youth and the economic
+                                    empowerment of the African-American community based on the following principles: Respect for
+                                    Family, Spirituality, Justice and Integrity.
+                                </p>
+                                <a href="https://100bmc.org/volunteer/" class="waves-effect waves-light btn">Volunteer</a>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="section">
+                                <h5>Aquinas Literacy Center</h5>
+                                <p>
+                                    Aquinas Literacy Center started in 1996 in the basement of the convent at Our Lady of Good
+                                    Counsel Church by the Adrian Dominican Sisters in response to the increased need for
+                                    English-language literacy instruction in the McKinley Park community. Under the leadership
+                                    of Sister Claudia Hinds, O.P. and Sister Rosemary Brennan, O.P., with the support of the
+                                    Adrian Dominican Sisters, the Aquinas Literacy Center opened its doors and began simply,
+                                    with two tables and five chairs.
+                                </p>
+                                <a href="http://aquinasliteracycenter.org/volunteers.html"
+                                    class="waves-effect waves-light btn">Volunteer</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col l12">
+                                <!-- div containing paragraph Who We Are -->
+                                <div class="news">
+                                    <h2>News</h2>
+                                    
+                                    <div id="news">
+                                    <h5>Click here to get see the latest news pertaining to this issue</h5>
+                                    </div>
+                                    <a class="waves-effect waves-light btn" id="button">Check the News</a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
         </div>
 
         <ul id="slide-out" class="sidenav">
@@ -193,7 +186,59 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-
+<script>
+          
+                $("#button").on("click", function () {
+                    $("#news").empty();
+                    button.style.display = "none";
+                    
+                    let searchItem = "racism"
+                    // Performing our AJAX GET request
+                    url = "https://newsapi.org/v2/top-headlines?q=" + searchItem + "&apiKey=73dbce07eb8943f3a1df1b850145f8f8";
+    
+    
+                    $.getJSON(url, function (data) {
+                        console.log(data);
+                        if(data.articles.length==0){
+                            $("#news").append("<h5> No Articles could be found</h5>" );
+                        }
+                        for (var i = 0; i < 5; i++) {
+    
+                           
+                            var article = data.articles[i];
+                            var $articleList = $("<ul>");
+                            $articleList.addClass("list-group");
+    
+                            $("#news").prepend($articleList);
+    
+                            var headline = article.title;
+                            var $articleListItem = $("<li class='list-group-item articleHeadline'>");
+                            if (headline && headline.main) {
+                                console.log(headline.main);
+                                $articleListItem.append(
+                                    "<span class='label label-primary'>" +
+                                    articleCount +
+                                    "</span>" +
+                                    "<strong> " +
+                                    headline.main +
+                                    "</strong>"
+                                );
+                            }
+                        
+                            var content = article.description
+                            $articleListItem.append("<h5>" + content + "</h5>");
+                            $articleListItem.append("<a href='" + article.url + "'>" + article.url + "</a>");
+    
+                            $articleList.append($articleListItem);
+    
+                        }
+                        // $("#news").html(output);
+                        //   $("body").append("<code>" + JSON.stringify(data, null, '<br/>') + "</code>");
+                    });
+    
+                });
+    
+            </script>
 </body>
 
 </html>
