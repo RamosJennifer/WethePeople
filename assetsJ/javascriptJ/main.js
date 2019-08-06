@@ -32,6 +32,69 @@ $(document).ready(function(){
             $("#slidesPage4").hide();  
             $("#slidesPage5").hide();
             $("#slidesPage6").hide();
+            $("#slidesPage7").hide();
+        }
+        if (slides === 2) {
+            $("#slidesPage1").hide();
+            $("#slidesPage2").hide();
+            $("#slidesPage3").show();
+            $("#slidesPage4").hide();
+            $("#slidesPage5").hide();
+            $("#slidesPage6").hide();
+            $("#slidesPage7").hide();
+        }
+        if (slides === 3) {
+            $("#slidesPage1").hide();
+            $("#slidesPage2").hide();
+            $("#slidesPage3").hide();
+            $("#slidesPage4").show();
+            $("#slidesPage5").hide();
+            $("#slidesPage6").hide();
+            $("#slidesPage7").hide();
+        }
+        if (slides === 4) {
+            $("#slidesPage1").hide();
+            $("#slidesPage2").hide();
+            $("#slidesPage3").hide();
+            $("#slidesPage4").hide();
+            $("#slidesPage5").show();
+            $("#slidesPage6").hide();
+            $("#slidesPage7").hide();
+        }
+        if (slides === 5) {
+            $("#slidesPage1").hide();
+            $("#slidesPage2").hide();
+            $("#slidesPage3").hide();
+            $("#slidesPage4").hide();
+            $("#slidesPage5").hide();
+            $("#slidesPage6").show();
+            $("#slidesPage7").hide();
+        }
+        if (slides === 6) {
+            $("#slidesPage1").hide();
+            $("#slidesPage2").hide();
+            $("#slidesPage3").hide();
+            $("#slidesPage4").hide();
+            $("#slidesPage5").hide();
+            $("#slidesPage6").hide();
+            $("#slidesPage7").show();
+        }
+    });
+
+    // This Function will Allow the Slides to Move Forwards 1 Slide
+    $("#nextButton").click(function(increaseSlides){
+        // Value of slides will increase by 1
+        slides++;
+        if (slides === 0) {
+            openingSlides();
+        }
+        if (slides === 1) {
+            $("#slidesPage1").hide();
+            $("#slidesPage2").show();
+            $("#slidesPage3").hide();
+            $("#slidesPage4").hide();  
+            $("#slidesPage5").hide();
+            $("#slidesPage6").hide();
             $("#slidesPage7").hide(); 
         }
         if (slides === 2) {
@@ -79,88 +142,6 @@ $(document).ready(function(){
             $("#slidesPage6").hide();
             $("#slidesPage7").show();
         }
-        if (slides === 7) {
-            $("#slidesPage1").hide();
-            $("#slidesPage2").hide();
-            $("#slidesPage3").hide();
-            $("#slidesPage4").hide();
-            $("#slidesPage5").hide();
-            $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
-        }
-    });
-
-    // This Function will Allow the Slides to Move Forwards 1 Slide
-    $("#nextButton").click(function(increaseSlides){
-        // Value of slides will increase by 1
-        slides++;
-        if (slides === 0) {
-            openingSlides();
-        }
-        if (slides === 1) {
-            $("#slidesPage1").hide();
-            $("#slidesPage2").show();
-            $("#slidesPage3").hide();
-            $("#slidesPage4").hide();  
-            $("#slidesPage5").hide();
-            $("#slidesPage6").hide();
-            $("#slidesPage7").hide();  
-        }
-        if (slides === 2) {
-            $("#slidesPage1").hide();
-            $("#slidesPage2").hide();
-            $("#slidesPage3").show();
-            $("#slidesPage4").hide();
-            $("#slidesPage5").hide();
-            $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
-        }
-        if (slides === 3) {
-            $("#slidesPage1").hide();
-            $("#slidesPage2").hide();
-            $("#slidesPage3").hide();
-            $("#slidesPage4").show();
-            $("#slidesPage5").hide();
-            $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
-        }
-        if (slides === 4) {
-            $("#slidesPage1").hide();
-            $("#slidesPage2").hide();
-            $("#slidesPage3").hide();
-            $("#slidesPage4").hide();
-            $("#slidesPage5").show();
-            $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
-        }
-        if (slides === 5) {
-            $("#slidesPage1").hide();
-            $("#slidesPage2").hide();
-            $("#slidesPage3").hide();
-            $("#slidesPage4").hide();
-            $("#slidesPage5").hide();
-            $("#slidesPage6").show();
-            $("#slidesPage7").hide();
-        }
-        if (slides === 6) {
-            $("#slidesPage1").hide();
-            $("#slidesPage2").hide();
-            $("#slidesPage3").hide();
-            $("#slidesPage4").hide();
-            $("#slidesPage5").hide();
-            $("#slidesPage6").hide();
-            $("#slidesPage7").show();
-        }
-        if (slides === 7) {
-            $("#slidesPage1").hide();
-            $("#slidesPage2").hide();
-            $("#slidesPage3").hide();
-            $("#slidesPage4").hide();
-            $("#slidesPage5").hide();
-            $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
-        }
-        
     });
 
     // When the user has clicked the create account button
