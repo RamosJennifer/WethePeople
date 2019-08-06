@@ -1,11 +1,19 @@
-// signup method
+var userID;
+// signup button on click
 $('#create').on('click', function () {
     $("#create").hide();
     $("#login").hide();
-    
     $('#signup-form').css('display', 'block');
 });
 
+// login button on click
+$('#login').on('click', function () {
+    $("#create").hide();
+    $("#login").hide();
+    $('#login-form').css('display', 'block');
+});
+
+// submit the signup form
 $('#signup-form').on('submit', function (e) {
     e.preventDefault();
 
@@ -14,23 +22,56 @@ $('#signup-form').on('submit', function (e) {
     const password = signupForm['create-password'].value;
 
     // sign up a user
-   
-    auth.createUserWithEmailAndPassword(email, password).then(function() {
-        window.location.href = "./dashboard.html"
-    }).catch(function(error) {
-        $('#error-message').text(error.message);       
-    });
+
+    // auth.createUserWithEmailAndPassword(email, password)
+    //     // future development - a unique page for each user
+    //     .then(() => {
+    //         window.location.href = "./dashboard.html";
+    //     }).catch(function (error) {
+    //         if ($('#error-message-c').length == 0) {
+
+    //             $('#error-message-c').text(error.message);
+    //         }
+    //         else {
+    //             $('#error-message-c').empty();
+    //             $('#error-message-c').text(error.message);
+
+    //         }
+
+    //     });
+
+
+
+    auth.createUserWithEmailAndPassword(email, password)
+        // future development - a unique page for each user
+        .then(cred => {
+            userID = cred.user.uid;
+            return fs.collection('users').doc(userID).set({
+                userID: userID,
+
+                about: "",
+                address: "",
+
+                hours: "",
+                interests: ""
+            }).then(() => {
+
+                window.location.href = "./dashboard.html";
+            })
+        }).catch(function (error) {
+            if ($('#error-message-c').length == 0) {
+
+                $('#error-message-c').text(error.message);
+            }
+            else {
+                $('#error-message-c').empty();
+                $('#error-message-c').text(error.message);
+
+            }
+
+        });
 });
 
-
-
-// login method
-$('#login').on('click', function () {
-    $("#create").hide();
-    $("#login").hide();
-
-    $('#login-form').css('display', 'block');
-});
 
 $('#login-form').on('submit', function (e) {
     e.preventDefault();
@@ -39,34 +80,25 @@ $('#login-form').on('submit', function (e) {
     const email = loginForm['login-email'].value;
     const password = loginForm['login-password'].value;
 
-    auth.signInWithEmailAndPassword(email, password).then(function() {
+    auth.signInWithEmailAndPassword(email, password).then(function () {
         window.location.href = "./dashboard.html"
-    }).catch(function(error) {
-        $('#error-message').text(error.message);       
+    }).catch(function (error) {
+        if ($('#error-message-l').length == 0) {
+
+            $('#error-message-l').text(error.message);
+        }
+        else {
+            $('#error-message-l').empty();
+            $('#error-message-l').text(error.message);
+
+        }
     });
 });
 
-// setup materialize components
-document.addEventListener('DOMContentLoaded', function () {
 
-    var modals = document.querySelectorAll('.modal');
-    M.Modal.init(modals);
 
-    var items = document.querySelectorAll('.collapsible');
-    M.Collapsible.init(items);
 
-});
-//   logout method
-$('#logout').on('click', function () {
-    auth.signOut().then(() => {
-        console.log('user signed out');
-        $('#news').hide();
-        $('#navig').hide();
 
-        $('#create').show();
-        $('#login').show();
-        $('#info').show();
-    })
 
-});
+
 

@@ -1,45 +1,9 @@
-
-// var loggedInUser = null;
+var userDocument;
 auth.onAuthStateChanged(user => {
-    if (user) {
-        // loggedInUser = user;
-        console.log('user logged in: ', user);
-        $('#news').show();
-        $('#navig').show();
-        $("#login-form").css('display', 'none');
-        $('#info').hide();
-    } else {
+    if (!user) {
         window.location.href = "./accounts.html";
     }
 });
-
-var abouT;
-var addresS;
-var hourS;
-var interestS;
-
-
-// getting data from my collection
-var docRef = fs.collection("profile").doc("rHRul4gGhrVe24hhPlAd");
-
-docRef.get().then(function (doc) {
-    var abouT = doc.data().about;
-    var addresS = doc.data().address;
-    var hourS = doc.data().hours;
-    var interestS = doc.data().interests;
-    console.log(abouT, addresS, hourS, interestS)
-    // putting current data on the site from my collection
-    $('#account-name').text(abouT);
-    $('#account-skills').text(interestS);
-    $('#account-hours').text(hourS);
-    $('#account-address').text(addresS);
-
-
-
-});
-
-
-
 
 $("#add-donation-btn").on("click", function (event) {
     event.preventDefault();
@@ -49,10 +13,7 @@ $("#add-donation-btn").on("click", function (event) {
     var NewsDueD = $("#due-input").val().trim();
     var NewsAddressD = $("#address-input").val().trim();
     var NewsContactD = $("#contact-input").val().trim();
-
-
-
-    // Creates local "temporary" object for holding train data
+    // create a local object
     var newNewsD = {
         infoD: NewsInfoD,
         dueD: NewsDueD,
@@ -83,11 +44,10 @@ $("#add-donation-btn").on("click", function (event) {
             $("<td>").text(NewsContactD),
 
         );
-
+        // Append the new row to the table   
         $("#donation-table").append(newRowD);
     });
 });
-// Append the new row to the table   
 
 
 
@@ -106,7 +66,7 @@ $("#add-volunteering-btn").on("click", function (event) {
     $("#address-input-v").val("");
     $("#contact-input-v").val("");
 
-    // Creates local "temporary" object for holding train data
+    // Creates local "temporary" object for holding user data
     var newNews = {
         info: NewsInfo,
         due: NewsDue,
@@ -114,11 +74,8 @@ $("#add-volunteering-btn").on("click", function (event) {
         contact: NewsContact
     };
 
-    // Logs everything to console
-    console.log(newNews);
 
-
-    // Uploads train data to the database
+    // Uploads user data to the database
     db.ref().push(newNews);
     db.ref().on("child_added", function (childSnapshot) {
         console.log(childSnapshot.val());
@@ -135,17 +92,15 @@ $("#add-volunteering-btn").on("click", function (event) {
             $("<td>").text(NewsContact),
 
         );
-
+        // Append the new row to the table   
         $("#volunteering-table").append(newRow);
     });
 });
-// Append the new row to the table   
 
-
-
-
-
-
+var about;
+var address;
+var hours;
+var interests;
 
 $("#update-my-profile").on("click", function () {
     event.preventDefault();
@@ -155,12 +110,6 @@ $("#update-my-profile").on("click", function () {
     // input
     $("#example").css('display', 'none');
     $("#input").css('display', 'table-row');
-
-
-
-
-
-
 
 });
 $("#save-changes").on('click', function () {
@@ -185,42 +134,36 @@ $("#save-changes").on('click', function () {
         interests: userSkills
 
     });
-    abouT = userName;
-    interestS = userSkills;
-    hourS = userHours;
-    addresS = userAddress;
-    $('#account-name').text(abouT);
-    $('#account-skills').text(interestS);
-    $('#account-hours').text(hourS);
-    $('#account-address').text(addresS);
+    about = userName;
+    interests = userSkills;
+    hours = userHours;
+    address = userAddress;
+    $('#account-name').text(about);
+    $('#account-skills').text(interests);
+    $('#account-hours').text(hours);
+    $('#account-address').text(address);
 
     $("#example").css('display', 'table-row');
 
 
 })
-
-$('#get-another-quote-button').on('click', function (e) {
-    e.preventDefault();
-    $.ajax({
-        type: 'GET',
-        crossDomain: true,
-        dataType: 'json',
-        url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=',
-        success: function (data) {
-            console.log(data);
-            var post = data.shift(); // The data is an array of posts. Grab the first one.
-            $('#quote-title').text(post.title);
-            $('#quote-content').html(post.content);
-
-            // If the Source is available, use it. Otherwise hide it.
-            if (typeof post.custom_meta !== 'undefined' && typeof post.custom_meta.Source !== 'undefined') {
-                $('#quote-source').html('Source:' + post.custom_meta.Source);
-            } else {
-                $('#quote-source').text('');
-            }
-        },
-        cache: false
+//   logout method
+$('#logout').on('click', function () {
+    auth.signOut().then(() => {
     });
 });
+// setup materialize components
+document.addEventListener('DOMContentLoaded', function () {
+
+    var modals = document.querySelectorAll('.modal');
+    M.Modal.init(modals);
+
+    var items = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(items);
+
+});
+
+
+
 
 

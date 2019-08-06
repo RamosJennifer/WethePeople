@@ -8,6 +8,7 @@
 body {
     margin: 0;
     height: 100;
+    background-image: url("../../assetsJ/imagesJ/green_dust_scratch.png");
 }
 .card-body {
     padding-top: 100px;
@@ -18,12 +19,6 @@ body {
 }
 
 #login-form {
-    display: none;
-}
-#news {
-    display: none;
-}
-#navig {
     display: none;
 }
 
@@ -45,4 +40,16 @@ body {
 #navig {
     display: flex;
     margin: auto;
+}
+.card {
+    padding-bottom: 50px;
+    
+}
+.btn {
+    width: 180px;
+    height: 35px;
+}
+.brand-logo {
+    height: 63px;
+    width: 63px;
 }

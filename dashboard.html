@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My account</title>
+    <title>My profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/CSS/style.css" />
@@ -16,8 +16,8 @@
     <!-- NAVBAR -->
     <nav class="z-depth-0 grey lighten-4" id="navig">
         <div class="nav-wrapper container">
-            <a href="#" class="brand-logo">
-                <img src="./assets/images/Free_Sample_By_Wix.jpg" style="width: 70px; ">
+            <a href="#" >
+                <img src="./assets/images/Free_Sample_By_Wix (1).jpg"  class="brand-logo">
             </a>
             <ul id="nav-mobile" class="right">
                 <li class="logged-in">
@@ -52,7 +52,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr id="example" style="display: table-row">
+                        <tr id="example" style="display: none">
                             <!-- <td> <input id="account-name" placeholder="My name is Alex Skinner, I am a web developer"></td> -->
                             <td class="slim-row"><span id="account-name"></span></td>
                             <td class="slim-row"><span id="account-skills"></span>
@@ -80,40 +80,40 @@
             </div>
         </div>
     </div>
+    <br>
 
 
-    <td><button class="center-align waves-effect waves-light btn" id="get-another-quote-button" style="display: inline">See your new awesome quote! </button></td>
-    <div id="quote-title"></div>
-    <div id="quote-content"></div>
-    <div id="quote-source"></div>
+
+
 
 
     <!-- NEWS LIST -->
     <div class="container" style="margin-top: 40px;" id="news">
-        <ul class="collapsible z-depth-0 guides" style="border: none;">
+        <ul class="collapsible z-depth-0">
 
             <li>
                 <div class="collapsible-header grey lighten-4">Donation</div>
                 <div class="collapsible-body white">
 
                     <table id="donation-table">
-                            <thead> 
-                        <tr>
-                            <th>Information</th>
-                            <th>Due date</th>
-                            <th>Adress</th>
-                            <th>Contact</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Streeterville children's community needs some donation: children's books, toys, school
-                                supplies</td>
-                            <td>September 2019</td>
-                            <td>Chicago, Streeterville, McClurg Ct3559</td>
-                            <td>+678990</td>
-                        </tr>
-                    </tbody>
+                        <thead>
+                            <tr>
+                                <th>Information</th>
+                                <th>Due date</th>
+                                <th>Adress</th>
+                                <th>Contact</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Streeterville children's community needs some donation: children's books, toys,
+                                    school
+                                    supplies</td>
+                                <td>September 2019</td>
+                                <td>Chicago, Streeterville, McClurg Ct3559</td>
+                                <td>+678990</td>
+                            </tr>
+                        </tbody>
 
 
                     </table>
@@ -124,24 +124,25 @@
                 <div class="collapsible-body white">
                     <table id="volunteering-table">
                         <thead>
-                        <tr>
-                            <th>Information</th>
-                            <th>Due date</th>
-                            <th>Address</th>
-                            <th>Contact</th>
-                            <!-- <th><button class="waves-effect waves-light btn">See profile</button></th> -->
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Literacy Chicago needs some help with teaching adult students. We have different
-                                classes: ESL, digital class, reading, citizenship..You do not need to be a professional
-                                teacher to become a part of our community. All ages welcome!</td>
-                            <td>No due, welcome all year round</td>
-                            <td>Chicago, 641 W Lake St #200</td>
-                            <td>+678990</td>
-                        </tr>
-                    </tbody>
+                            <tr>
+                                <th>Information</th>
+                                <th>Due date</th>
+                                <th>Address</th>
+                                <th>Contact</th>
+                                <!-- <th><button class="waves-effect waves-light btn">See profile</button></th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Literacy Chicago needs some help with teaching adult students. We have different
+                                    classes: ESL, digital class, reading, citizenship..You do not need to be a
+                                    professional
+                                    teacher to become a part of our community. All ages welcome!</td>
+                                <td>No due, welcome all year round</td>
+                                <td>Chicago, 641 W Lake St #200</td>
+                                <td>+678990</td>
+                            </tr>
+                        </tbody>
 
 
                     </table>
@@ -210,16 +211,18 @@
 
 
 
-
+    <!-- jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- all firebase -->
     <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+    <!-- my javascript files -->
     <script src="./assets/javascript/initializeFB.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./assets/javascript/auth.js"></script>
     <script src="./assets/javascript/loggedin.js"></script>
+    <!-- materialize javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
 </body>
