@@ -1,0 +1,36 @@
+body {
+    width:100%;
+}
+nav{
+    max-width: 95%;
+    display: none;
+    float: right;
+}
+#navig {
+    display: flex;
+    margin: auto;
+}
+.card {
+    width: 960px;
+    text-align: center;
+}
+.btn {
+    width:200px;
+    text-align: center;
+}
+#previousButton, #nextButton {
+    cursor: pointer;
+    font-size: 36px;
+}
+#previousButton {
+    display:inline;
+}
+.signInButton, .quizButton {
+    cursor: pointer;
+}
+.hamburger {
+    width: 35px;
+    height: 5px;;
+    background-color:black;
+    margin: 6px 0;
+}
