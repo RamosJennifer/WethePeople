@@ -13,7 +13,6 @@ $(document).ready(function(){
         $("#slidesPage4").hide();
         $("#slidesPage5").hide();
         $("#slidesPage6").hide();
-        $("#slidesPage7").hide();
     }
 
     var slides = 0;
@@ -32,7 +31,6 @@ $(document).ready(function(){
             $("#slidesPage4").hide();  
             $("#slidesPage5").hide();
             $("#slidesPage6").hide();
-            $("#slidesPage7").hide();  
         }
         if (slides === 2) {
             $("#slidesPage1").hide();
@@ -41,7 +39,6 @@ $(document).ready(function(){
             $("#slidesPage4").hide();
             $("#slidesPage5").hide();
             $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
         }
         if (slides === 3) {
             $("#slidesPage1").hide();
@@ -50,7 +47,6 @@ $(document).ready(function(){
             $("#slidesPage4").show();
             $("#slidesPage5").hide();
             $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
         }
         if (slides === 4) {
             $("#slidesPage1").hide();
@@ -68,7 +64,6 @@ $(document).ready(function(){
             $("#slidesPage4").hide();
             $("#slidesPage5").hide();
             $("#slidesPage6").show();
-            $("#slidesPage7").hide();
         }
         if (slides === 6) {
             $("#slidesPage1").hide();
@@ -77,7 +72,6 @@ $(document).ready(function(){
             $("#slidesPage4").hide();
             $("#slidesPage5").hide();
             $("#slidesPage6").hide();
-            $("#slidesPage7").show();
         }
     });
 
@@ -95,7 +89,6 @@ $(document).ready(function(){
             $("#slidesPage4").hide();  
             $("#slidesPage5").hide();
             $("#slidesPage6").hide();
-            $("#slidesPage7").hide();  
         }
         if (slides === 2) {
             $("#slidesPage1").hide();
@@ -104,7 +97,6 @@ $(document).ready(function(){
             $("#slidesPage4").hide();
             $("#slidesPage5").hide();
             $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
         }
         if (slides === 3) {
             $("#slidesPage1").hide();
@@ -113,7 +105,6 @@ $(document).ready(function(){
             $("#slidesPage4").show();
             $("#slidesPage5").hide();
             $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
         }
         if (slides === 4) {
             $("#slidesPage1").hide();
@@ -122,7 +113,6 @@ $(document).ready(function(){
             $("#slidesPage4").hide();
             $("#slidesPage5").show();
             $("#slidesPage6").hide();
-            $("#slidesPage7").hide();
         }
         if (slides === 5) {
             $("#slidesPage1").hide();
@@ -131,7 +121,6 @@ $(document).ready(function(){
             $("#slidesPage4").hide();
             $("#slidesPage5").hide();
             $("#slidesPage6").show();
-            $("#slidesPage7").hide();
         }
         if (slides === 6) {
             $("#slidesPage1").hide();
@@ -140,9 +129,7 @@ $(document).ready(function(){
             $("#slidesPage4").hide();
             $("#slidesPage5").hide();
             $("#slidesPage6").hide();
-            $("#slidesPage7").show();
         }
-        
     });
 
     // When the user has clicked the create account button
