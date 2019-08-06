@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    height: 100;
+}
+.card {
+    width: 960px;
+    text-align: center;
+
+}
+.card-body {
+    padding-top: 100px;
+}
+.btn {
+    width:200px;
+    text-align: center;
+}
+.hamburger {
+    width: 35px;
+    height: 5px;
+    background-color:black;
+    margin: 6px 0;
+}
+
+#signup-form {
+    display: none;
+}
+
+#login-form {
+    display: none;
+}
+#news {
+    display: none;
+}
+/* #navig {
+    display: none;
+} */
+
+#canvas {
+    padding: 20px;
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto;   
+
+}
+.slim-row {
+    
+    word-wrap: break-word;
+    
+}
+#updated-page {
+    table-layout: fixed;
+}
+#navig {
+    display: flex;
+    margin: auto;
+}
+nav {
+    max-width: 95%;
+    display: none;
+    float: right;
+}
