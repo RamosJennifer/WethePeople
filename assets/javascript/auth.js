@@ -21,25 +21,6 @@ $('#signup-form').on('submit', function (e) {
     const email = signupForm['create-email'].value;
     const password = signupForm['create-password'].value;
 
-    // sign up a user
-
-    // auth.createUserWithEmailAndPassword(email, password)
-    //     // future development - a unique page for each user
-    //     .then(() => {
-    //         window.location.href = "./dashboard.html";
-    //     }).catch(function (error) {
-    //         if ($('#error-message-c').length == 0) {
-
-    //             $('#error-message-c').text(error.message);
-    //         }
-    //         else {
-    //             $('#error-message-c').empty();
-    //             $('#error-message-c').text(error.message);
-
-    //         }
-
-    //     });
-
 
 
     auth.createUserWithEmailAndPassword(email, password)
