@@ -2,6 +2,9 @@ $(document).ready(function(){
     // Sidebar Navigation
     $('.sidenav').sidenav();
 
+    // Dropdown Trigger
+    $(".dropdown-trigger").dropdown({ hover: false })
+
     // Calling our Opening Slides
     openingSlides();
     
