@@ -34,3 +34,10 @@ nav{
     background-color:black;
     margin: 6px 0;
 }
+.our-names {
+    text-align: center;
+}
+.slidesP{
+    width: 500px;
+    text-align: left;
+}
